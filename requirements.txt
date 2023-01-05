@@ -1,2 +1,5 @@
-pyppeteer==1.0.2
-pydantic==1.10.2
+pyppetee
+pydantic
+aiohttp
+lxml
+pytest
