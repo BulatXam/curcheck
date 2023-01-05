@@ -1,7 +1,7 @@
 # Curcheck
 ___
 
-Library for parsing SPA sites based on pyppeteer
+Library for parsing SPA and MPA sites based on pyppeteer and lxml
 
 ___
 
@@ -30,8 +30,8 @@ async def paginator(page: Page):
 
 
 async def main():
-    browser = await launch(headless=False)
-    site = await get_site(browser, domain="https://www.wildberries.ru")
+    browser = await launch()
+    site = await get_site(browser=browser, domain="https://www.wildberries.ru")
     page = await site.create_page(
         url="/",
     )
@@ -58,3 +58,9 @@ if __name__ == "__main__":
 - Parsing catalog urls
 - Parsing products in catalog for site.paginate
 - Performs the "paginator" function on each paginated page
+
+---
+
+## Documentations:
+- [Pyppeteer](https://pyppeteer.github.io/pyppeteer/)
+- [lxml](https://github.com/lxml/lxml)
