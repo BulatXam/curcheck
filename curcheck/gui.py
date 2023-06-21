@@ -1,3 +1,9 @@
+"""
+    GUI for parsers
+
+    <-- in develop -->
+"""
+
 import tkinter as tk
 
 from typing import List
