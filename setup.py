@@ -1,10 +1,11 @@
 from setuptools import setup
 
-long_description = "None description"
+with open('readme.md', encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(
     name='curcheck',
-    version='1.1.2b',
+    version='1.1.1',
     description='Library for parsing SPA and MPA sites',
     packages=['curcheck'],
     author="BulatXam",
