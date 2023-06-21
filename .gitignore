@@ -3,3 +3,5 @@ venv
 .vscode
 main.py
 *.pyc
+dist/
+curcheck.egg-info/
