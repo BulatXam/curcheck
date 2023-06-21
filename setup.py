@@ -1,11 +1,10 @@
 from setuptools import setup
 
-with open('readme.md', encoding='utf-8') as f:
-    long_description = f.read()
+long_description = "None description"
 
 setup(
     name='curcheck',
-    version='1.0',
+    version='1.1.2b',
     description='Library for parsing SPA and MPA sites',
     packages=['curcheck'],
     author="BulatXam",
@@ -13,7 +12,6 @@ setup(
     zip_safe=False,
     install_requires=[
         "pyppeteer",
-        "pydantic",
         "aiohttp",
         "lxml",
     ],

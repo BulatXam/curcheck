@@ -13,7 +13,6 @@ from aiohttp import ClientSession
 from pyppeteer import launch
 from pyppeteer.browser import Browser
 
-from .errors import SiteConfigurationError
 from .events import EventPage, EventPaginator, EventLongpoll
 
 
