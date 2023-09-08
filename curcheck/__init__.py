@@ -1,5 +1,5 @@
 from .dispatcher import Dispatcher
-from .router import SiteRouter
+from .router import ExecuteRouter, AuxRouter
 
 try:
     # noinspection PyCompatibility
@@ -18,5 +18,6 @@ __pyppeteer_version__ = 'v1.6.0'
 
 __all__ = (
     "Dispatcher",
-    "SiteRouter",
+    "ExecuteRouter",
+    "AuxRouter",
 )
