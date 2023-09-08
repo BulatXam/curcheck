@@ -9,24 +9,31 @@ from typing import List
 
 from pyppeteer import launch
 
-from .gui import AbstractGUIParser
-from .router import SiteRouter
+from .router import AbstractRouter
 
 
 class Dispatcher:
+    """ 
+    Диспетчер роутеров. В зависимости от нагрузки, диспетчер будет принимать
+    решения какая страницы работает на каком браузере в определенное кол-во потоков.  
+    """
     def __init__(self) -> None:
-        self.spa_routers: List[SiteRouter] = []
-        self.mpa_routers: List[SiteRouter] = []
+        self.spa_routers: List[AbstractRouter] = []
+        self.mpa_routers: List[AbstractRouter] = []
 
-    def include_router(self, router: SiteRouter):
+    def include_router(self, router: AbstractRouter):
         if router.is_spa:
             self.spa_routers.append(router)
         else:
             self.mpa_routers.append(router)
 
-    async def start(self):
+    async def start(
+        self, options: dict = None, **kwargs
+    ):
         if len(self.spa_routers) != 0:
-            browser = await launch(headless=False)
+            browser = await launch(
+                options=options, **kwargs
+            )
 
         await asyncio.gather(
             *[router.executor(browser=browser) for router in self.spa_routers],
